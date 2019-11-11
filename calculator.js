@@ -7,6 +7,7 @@ const sound = document.querySelector('audio');
 
 let numberArray = [];
 let number = 0;
+// let screen.innerText = number
 
 
 let first = true
@@ -16,7 +17,7 @@ let operand;
 
 let x = ''
 let y = ''
-let equation;
+// let equation = `x ${operand} y`
 
 const math = {
 
@@ -32,10 +33,11 @@ const math = {
 
 //displays number typed in on screen
 function show(e) {
-  screen.innerText = number
+
+  x ? screen.innerText = x : screen.innerText = 0
 }
 
-function calculate(e){
+function calculate(e) {
   // console.log('what type of button am I?', e.target.dataset.button)
   // sound.play()
   if(e.target.dataset.button === 'number' || 'decimal') {
@@ -51,9 +53,12 @@ function calculate(e){
   }
 
   if(e.target.dataset.button === 'operand') {
-    console.log('LIVE ONE!', 'operand', e.target.innerHTML)
+
+    console.log('operand', e.target.innerText)
+
     if(x&&y) {
       x = math[operand](x, y)
+      screen.innerText = x
       numberArray = []
       number = 0
     } else {
@@ -63,10 +68,6 @@ function calculate(e){
       first = false
       screen.innerHTML = x
     }
-
-
-
-
     // equation = math[e.target.innerHTML]
     //
     // console.log(equation(4, 2))
@@ -75,15 +76,18 @@ function calculate(e){
 }
 
 function evaluate(e) {
-  console.log('evaluating!')
-  console.log('equals:', math[operand](x,y))
-  number = math[operand](x,y)
-  screen.innerHTML = number
-  x = ''
-  y = ''
-  numberArray = []
-  number = 0;
-  first = true
+  // console.log('evaluating!')
+  // console.log('equals:', math[operand](x,y))
+  if(x&&y) {
+    number = math[operand](x,y)
+    number ? screen.innerHTML = number : screen.innerHTML = 0
+    x = ''
+    y = ''
+    numberArray = []
+    number = 0;
+    first = true
+  }
+
 }
 
 //once x is set and I hit the operand, how can I set Y?
@@ -93,9 +97,10 @@ function clear(e){
   console.log('cleared!')
   numberArray = []
   number = 0
-  screen.innerText = number
   x = ''
   y = ''
+  screen.innerText = 0
+  first = true;
 }
 
 //should i make a math object that takes in the operand string as a key and returns a function?
