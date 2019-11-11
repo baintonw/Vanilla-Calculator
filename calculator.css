@@ -20,6 +20,13 @@
   border: red solid 6px;
 }
 
+#screen {
+    position: absolute;
+    top: -50px;
+    right: 0px;
+    font-size: 60px;
+}
+
 .buttons {
     position: absolute;
     top: 20%;
@@ -74,4 +81,5 @@
   position: relative;
   height:100%;
   width: 100%;
+  font-size: 30px;
 }
