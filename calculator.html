@@ -12,30 +12,37 @@
       </div>
       <div class="buttons">
         <div class="row">
-          <button class="small-button">+</button>
-          <button class="small-button">-</button>
-          <button class="small-button">x</button>
-          <button class="small-button">%</button>
+          <button class="small-button" data-button="operand">+</button>
+          <button class="small-button" data-button="operand">-</button>
+          <button class="small-button" data-button="operand">x</button>
+          <button class="small-button" data-button="operand">%</button>
         </div>
         <div class="short-row">
-          <button class="small-button">7</button>
-          <button class="small-button">8</button>
-          <button class="small-button">9</button>
+          <button class="small-button" data-button="number">7</button>
+          <button class="small-button" data-button="number">8</button>
+          <button class="small-button" data-button="number">9</button>
         </div>
         <div class="short-row">
-          <button class="small-button">4</button>
-          <button class="small-button">5</button>
-          <button class="small-button">6</button>
+          <button class="small-button" data-button="number">4</button>
+          <button class="small-button" data-button="number">5</button>
+          <button class="small-button" data-button="number">6</button>
         </div>
         <div class="short-row">
-          <button class="small-button">1</button>
-          <button class="small-button">2</button>
-          <button class="small-button">3</button>
+          <button class="small-button" data-button="number">1</button>
+          <button class="small-button" data-button="number">2</button>
+          <button class="small-button" data-button="number">3</button>
+        </div>
+        <div class="short-row">
+          <button class="small-button" data-button="number">0</button>
+          <button class="small-button" data-button="decimal">.</button>
+          <button class="small-button" data-button="AC">AC</button>
         </div>
         <div id="equals-column">
-          <button id="equals-btn">=</button>
+          <button class="large-button" id="equals-btn" data-button="operand">=</button>
         </div>
       </div>
     </div>
+    <script src="./calculator.js">
+    </script>
   </body>
 </html>

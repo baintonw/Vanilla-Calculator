@@ -40,14 +40,13 @@
 }
 
 .short-row {
-  margin-top: 10px;
-  height: 20%;
-  border: green solid 2px;
-  display: flex;
-  flex-wrap: wrap;
-      padding-left: 10px;
-  /* justify-content: left -2px; */
-  /* flex-basis: auto; */
+    margin-top: 10px;
+    height: 15%;
+    border: green solid 2px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    /* flex-basis: auto; */
 }
 
 
