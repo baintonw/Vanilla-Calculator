@@ -32,59 +32,56 @@ const math = {
 
 
 //displays number typed in on screen
-function show(e) {
-
-  x ? screen.innerText = x : screen.innerText = 0
+function show(e, x, y) {
+  if(first && x) {
+    screen.innerText = x
+  } else if(!first && y) {
+    screen.innerText = y
+  }
 }
 
 function calculate(e) {
-  // console.log('what type of button am I?', e.target.dataset.button)
-  // sound.play()
   if(e.target.dataset.button === 'number' || 'decimal') {
     numberArray.push(e.target.innerText)
     number = parseFloat(numberArray.join(''))
     first ? x = number : y = number
-
-
     console.log('x', x)
     console.log('y', y)
-
-
+    show(e, x, y)
   }
 
   if(e.target.dataset.button === 'operand') {
 
-    console.log('operand', e.target.innerText)
-
     if(x&&y) {
       x = math[operand](x, y)
-      screen.innerText = x
+      show()
       numberArray = []
-      number = 0
-    } else {
+    } else if(x) {
+      // show()
       numberArray = []
-      number = 0
+      // number = 0
       operand = e.target.innerHTML
       first = false
-      screen.innerHTML = x
+      // screen.innerHTML = x
     }
-    // equation = math[e.target.innerHTML]
-    //
-    // console.log(equation(4, 2))
+
   }
 
 }
 
 function evaluate(e) {
+
   // console.log('evaluating!')
+
   // console.log('equals:', math[operand](x,y))
+
   if(x&&y) {
     number = math[operand](x,y)
-    number ? screen.innerHTML = number : screen.innerHTML = 0
+    screen.innerText = number
     x = ''
     y = ''
     numberArray = []
-    number = 0;
+    // number = 0;
     first = true
   }
 
@@ -100,7 +97,7 @@ function clear(e){
   x = ''
   y = ''
   screen.innerText = 0
-  first = true;
+  first = true
 }
 
 //should i make a math object that takes in the operand string as a key and returns a function?
@@ -111,9 +108,11 @@ function clear(e){
 
 buttons.forEach(button => {
   //adds the 'show' event listener to each button
+
   button.addEventListener('click', calculate)
-  button.addEventListener('click', show)
+  // button.addEventListener('click', show)
   // button.addEventListener('')
+
 })
 
 ac.addEventListener('click', clear)
