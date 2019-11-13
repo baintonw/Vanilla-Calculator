@@ -7,16 +7,17 @@ const sound = document.querySelector('audio');
 
 let numberArray = [];
 let number = 0;
+let prevNum;
 // let screen.innerText = number
 
 
-let first = true
+let first = true;
 let operand;
 
 
 
-let x = ''
-let y = ''
+let x = '';
+let y = '';
 // let equation = `x ${operand} y`
 
 const math = {
@@ -41,48 +42,42 @@ function show(e, x, y) {
 }
 
 function calculate(e) {
+
   if(e.target.dataset.button === 'number' || 'decimal') {
     numberArray.push(e.target.innerText)
     number = parseFloat(numberArray.join(''))
     first ? x = number : y = number
     console.log('x', x)
     console.log('y', y)
+    console.log('number', number)
     show(e, x, y)
   }
 
   if(e.target.dataset.button === 'operand') {
-
-    if(x&&y) {
+    if(!first) {
       x = math[operand](x, y)
       show()
       numberArray = []
     } else if(x) {
-      // show()
       numberArray = []
-      // number = 0
       operand = e.target.innerHTML
       first = false
-      // screen.innerHTML = x
+    } else if(first) {
+
+      console.log('we are setting the first number', first, 'number', number)
     }
-
   }
-
 }
 
 function evaluate(e) {
 
-  // console.log('evaluating!')
-
-  // console.log('equals:', math[operand](x,y))
-
   if(x&&y) {
     number = math[operand](x,y)
+    x = number
     screen.innerText = number
-    x = ''
-    y = ''
     numberArray = []
-    // number = 0;
     first = true
+    console.log('this is the value of x:', x, 'number:', x , first)
   }
 
 }
@@ -107,11 +102,10 @@ function clear(e){
 
 
 buttons.forEach(button => {
-  //adds the 'show' event listener to each button
+
 
   button.addEventListener('click', calculate)
-  // button.addEventListener('click', show)
-  // button.addEventListener('')
+
 
 })
 
