@@ -7,7 +7,7 @@ const sound = document.querySelector('audio');
 
 let numberArray = [];
 let number = 0;
-let prevNum;
+let prevNum = ''
 // let screen.innerText = number
 
 
@@ -43,9 +43,9 @@ function show(e, x, y) {
 
 function calculate(e) {
 
-  if(e.target.dataset.button === 'number' || 'decimal') {
+  if(e.target.dataset.button === 'number' || e.target.dataset.button === 'decimal') {
     numberArray.push(e.target.innerText)
-    number = parseFloat(numberArray.join(''))
+    numberArray.join('') ? number = parseFloat(numberArray.join('')) : number = x
     first ? x = number : y = number
     console.log('x', x)
     console.log('y', y)
@@ -54,17 +54,23 @@ function calculate(e) {
   }
 
   if(e.target.dataset.button === 'operand') {
-    if(!first) {
-      x = math[operand](x, y)
-      show()
-      numberArray = []
-    } else if(x) {
+    debugger
+    if(!first && prevNum) {
       numberArray = []
       operand = e.target.innerHTML
       first = false
-    } else if(first) {
-
-      console.log('we are setting the first number', first, 'number', number)
+      debugger
+    }else if(!first) {
+      x = math[operand](x, y)
+      show(e, x, y)
+      numberArray = []
+      debugger
+    } else if(x) {
+      debugger
+      numberArray = []
+      operand = e.target.innerHTML
+      show(e, x, y)
+      first = false
     }
   }
 }
@@ -74,10 +80,12 @@ function evaluate(e) {
   if(x&&y) {
     number = math[operand](x,y)
     x = number
+    prevNum = number
     screen.innerText = number
     numberArray = []
-    first = true
-    console.log('this is the value of x:', x, 'number:', x , first)
+    number = 0
+    // first = true
+    console.log('this is the value of x:', x, 'number:', number , first)
   }
 
 }
