@@ -1,5 +1,6 @@
 
 .calculator {
+  background: #878f99;
   position: absolute;
   left: 30%;
   top: 10%;
@@ -11,6 +12,8 @@
 
 .display {
   /* align-self: center; */
+  background: black;
+  color: white;
   position: relative;
   top: 5%;
   left: 1%;
@@ -28,6 +31,7 @@
 }
 
 .buttons {
+    background: #c4c3be;
     position: absolute;
     top: 20%;
     left: 3%;
@@ -58,6 +62,7 @@
 
 
 .small-button {
+  background: #ced0d6;
   position: relative;
   font-size: 25px;
   margin-left: 10px;
@@ -78,6 +83,7 @@
 }
 
 #equals-btn {
+  background: #3654ad;
   position: relative;
   height:100%;
   width: 100%;
