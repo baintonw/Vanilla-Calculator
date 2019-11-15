@@ -1,6 +1,8 @@
 
 .calculator {
+  box-shadow: 8px 8px 1px grey;
   background: #878f99;
+  border-radius: 3px;
   position: absolute;
   left: 30%;
   top: 10%;
@@ -62,6 +64,8 @@
 
 
 .small-button {
+  border-color: black;
+  
   background: #ced0d6;
   position: relative;
   font-size: 25px;
