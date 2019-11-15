@@ -1,3 +1,4 @@
+//constants
 const numbers = [...document.querySelectorAll('[data-button = "number" ]')];
 const operands = [...document.querySelectorAll('[data-button = "operand"]')];
 const decimal = document.querySelector('[data-button = "decimal"]');
@@ -6,7 +7,7 @@ const ac = document.querySelector('[data-button = "AC"]');
 const equals = document.querySelector('#equals-btn')
 const sound = document.querySelector('audio');
 
-
+//mathematical variables
 let numberArray = [];
 let number = 0
 console.log(number)
@@ -15,8 +16,11 @@ let operand;
 let x = 0;
 let y = 0;
 
+//are we setting the first variable?
 let setX = true
 
+
+//this object takes the innerText of the operand buttons, and uses them as a key to access the desired mathematical functionality
 const math = {
 
   '+': function(x, y) { return x + y },
@@ -44,10 +48,11 @@ function setNumber(e){
 
 }
 
+//take the number set into the x variables, and reduce with the next variable y
 function calculate(e){
   //needs to clear numberArray
   console.log('operand event', e.target.innerText)
-  //set operand in variable
+  //is the operand available? if so calculate x and y following the math hash map
   operand ? x = math[operand](x, y) : null
   display(x)
   operand = e.target.innerText
@@ -55,10 +60,10 @@ function calculate(e){
   numberArray = []
   console.log('x', x, 'y', y)
 
-
-
 }
 
+
+//triggers upon equal button press, evaluates x and y based on operand and clears the number and operand variables
 function evaluate(){
   number = math[operand](x,y)
   x = number
@@ -68,6 +73,7 @@ function evaluate(){
   console.log('x', x)
 }
 
+//clears display and resets all variables. Starts calculating process from scratch
 function clear(){
   x = 0
   y = 0
@@ -78,6 +84,9 @@ function clear(){
   display(number)
 
 }
+
+//event listeners
+
 numbers.forEach(number => {
   number.addEventListener('click', setNumber)
 })
@@ -91,6 +100,7 @@ operands.forEach(opera => {
 equals.addEventListener('click', evaluate)
 ac.addEventListener('click', clear)
 
+//DEPRECATED
 
 // buttons.addEventListener()
 
