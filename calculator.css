@@ -6,7 +6,7 @@
   position: absolute;
   left: 30%;
   top: 10%;
-  border: black solid 5px;
+  border: black solid 2px;
   width: 550px;
   height: 700px;
   display: flex;
@@ -34,18 +34,19 @@
 
 .buttons {
     background: #c4c3be;
+    box-shadow: 5px 5px black;
     position: absolute;
     top: 20%;
     left: 3%;
     height: 75%;
     width: 91%;
-    border: blue solid 4px;
+    /* border: blue solid 4px; */
 }
 
 .row {
   margin-top: 10px;
   height: 20%;
-  border: green solid 2px;
+  /* border: green solid 2px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -55,7 +56,7 @@
 .short-row {
     margin-top: 10px;
     height: 15%;
-    border: green solid 2px;
+    /* border: green solid 2px; */
     display: flex;
     flex-wrap: wrap;
     padding-left: 10px;
@@ -64,32 +65,62 @@
 
 
 .small-button {
-  border-color: black;
-  
-  background: #ced0d6;
-  position: relative;
-  font-size: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
-  height: 100%;
-  width: 20%;
-  /* width: 100%; */
+    border-color: black;
+    box-shadow: 3px 3px black;
+    background: #ced0d6;
+    position: relative;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 100%;
+    width: 20%;
+    /* width: 100%; */
+}
 
+.small-button:active {
+    /* border-color: black; */
+    border
+    box-shadow: 3px 3px red;
+    background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+
+    position: relative;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 100%;
+    width: 20%;
+    /* width: 100%; */
 }
 
 #equals-column {
     border: purple solid 2px;
     position: relative;
     width: 20%;
-    height: 65%;
-    top: -66%;
+    height: 65.2%;
+    top: -65.5%;
     left: 76%;
 }
 
 #equals-btn {
-  background: #3654ad;
-  position: relative;
-  height:100%;
-  width: 100%;
-  font-size: 30px;
+    background: #3654ad;
+    box-shadow: 5px 5px black;
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+}
+
+#equals-btn:active {
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+    outline: none;
+    box-shadow: 5px 5px black;
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
 }

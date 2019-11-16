@@ -39,10 +39,12 @@ function setNumber(e){
     if(e.target.innerText === '.'){
       numberArray.indexOf(e.target.innerText) === -1 ? numberArray.push(e.target.innerText) : console.log('Array already includes one decimal point')
     } else {
-      numberArray.push(e.target.innerText)
-      setX ? x = parseFloat(numberArray.join('')) : y = parseFloat(numberArray.join(''))
-      setX ? display(x) : display(y)
-      console.log(e.target.innerText, 'setting number x', x, 'number y', y)
+      if(numberArray.length < 16){
+        numberArray.push(e.target.innerText)
+        setX ? x = parseFloat(numberArray.join('')) : y = parseFloat(numberArray.join(''))
+        setX ? display(x) : display(y)
+        console.log(e.target.innerText, 'setting number x', x, 'number y', y)
+      }
 
     }
 
@@ -50,6 +52,9 @@ function setNumber(e){
 
 //take the number set into the x variables, and reduce with the next variable y
 function calculate(e){
+  if(!x){
+    return
+  }
   //needs to clear numberArray
   console.log('operand event', e.target.innerText)
   //is the operand available? if so calculate x and y following the math hash map
