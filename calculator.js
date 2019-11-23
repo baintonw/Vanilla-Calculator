@@ -29,9 +29,21 @@ const math = {
   '%': function(x, y) { return x / y }
 
 };
+
+//counts decimals
+var countDecimals = function (value) {
+    if(Math.floor(value) === value) return 0;
+    return value.toString().split(".")[1].length || 0;
+}
+
 //takes a value and displays it on the screen
 function display(num){
-  screen.innerText = num
+  if((countDecimals(num) > 0)) {
+    num = num.toFixed(4)
+    screen.innerText = num
+  } else {
+    screen.innerText = num
+  }
 }
 
 //sets main value number when numbers are pressed on calculator
@@ -45,9 +57,7 @@ function setNumber(e){
         setX ? display(x) : display(y)
         console.log(e.target.innerText, 'setting number x', x, 'number y', y)
       }
-
     }
-
 }
 
 //take the number set into the x variables, and reduce with the next variable y
