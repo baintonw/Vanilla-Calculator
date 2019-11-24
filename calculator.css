@@ -1,15 +1,15 @@
 
 .calculator {
-  box-shadow: 8px 8px 1px grey;
-  background: #878f99;
-  border-radius: 3px;
-  position: absolute;
-  left: 30%;
-  top: 10%;
-  border: black solid 2px;
-  width: 550px;
-  height: 700px;
-  display: flex;
+    /* box-shadow: 8px 8px 1px grey; */
+    background: #e1e5ea;
+    border-radius: 3px;
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    border: black solid 2px;
+    width: 550px;
+    height: 700px;
+    display: flex;
 }
 
 .display {
@@ -34,7 +34,7 @@
 
 .buttons {
     background: #c4c3be;
-    box-shadow: 5px 5px black;
+    border-radius: 2px;
     position: absolute;
     top: 20%;
     left: 3%;
@@ -63,17 +63,24 @@
     /* flex-basis: auto; */
 }
 
+.small-button[data-button = "operand"] {
+    /* border-radius: 10px; */
+    width: 12vh;
+    left: -3px;
+}
+
 
 .small-button {
     border-color: black;
-    box-shadow: 3px 3px black;
+    border-radius: 8px;
+    /* box-shadow: 3px 3px black; */
     background: #ced0d6;
     position: relative;
     font-size: 25px;
     margin-left: 10px;
     margin-right: 10px;
     height: 100%;
-    width: 20%;
+    width: 12vh;
 
     -webkit-box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
     box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
@@ -102,17 +109,19 @@
 }
 
 #equals-column {
-    border: purple solid 2px;
+    /* border: purple solid 2px; */
     position: relative;
     width: 20%;
     height: 65.2%;
     top: -65.5%;
-    left: 76%;
+    left: 75%;
 }
 
 #equals-btn {
     background: #3654ad;
-    box-shadow: 5px 5px black;
+    border: 1px solid black;
+    border-radius: 8px;
+    /* box-shadow: 5px 5px black; */
     height: 100%;
     width: 100%;
     font-size: 30px;
