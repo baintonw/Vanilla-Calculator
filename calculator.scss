@@ -35,7 +35,6 @@
 .buttons {
     background: #c4c3be;
     border-radius: 2px;
-    box-shadow: 3px 0px 3px black;
     position: absolute;
     top: 20%;
     left: 3%;
@@ -83,18 +82,20 @@
     height: 100%;
     width: 12vh;
 
-    box-shadow: 2px 2px 5px #494646;
+    -webkit-box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
     z-index: 1;
+}
 }
 
 .small-button:active {
-
-
+    /* border-color: black; */
+    border
     box-shadow: 3px 3px red;
     background: #e5e5e5;
-    webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-    moz-box-shadow: inset 2px 2px 5px #c1c1c1;
-    box-shadow: inset 20px 10px 5px #c1c1c1;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
    outline: none;
 
     position: relative;
@@ -124,19 +125,17 @@
     width: 100%;
     font-size: 30px;
 
-    box-shadow: 2px 2px 5px #494646;
-
 
 }
 
 #equals-btn:active {
     background: #e5e5e5;
-
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
     outline: none;
     box-shadow: 5px 5px black;
     height: 100%;
     width: 100%;
     font-size: 30px;
-
-    box-shadow: inset 2px 2px 5px #494646;
 }

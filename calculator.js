@@ -38,12 +38,9 @@ var countDecimals = function (value) {
 
 //takes a value and displays it on the screen
 function display(num){
-  if((countDecimals(num) > 0)) {
-    num = num.toFixed(4)
+    console.log('number as array', num.toString().split('.'),'length:', num.toString().split('').length)
     screen.innerText = num
-  } else {
-    screen.innerText = num
-  }
+
 }
 
 //sets main value number when numbers are pressed on calculator
